@@ -1,0 +1,31 @@
+DirectoryIndex index.php
+Options -Indexes
+
+# 防止直接訪問 .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# 設置默認字符集
+AddDefaultCharset UTF-8
+
+# 啟用 URL 重寫引擎
+RewriteEngine On
+
+# 如果請求的是實際文件或目錄，則不進行重寫
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 將所有請求重定向到 index.php
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+# 防止訪問敏感文件
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 設置 PHP 錯誤報告
+php_flag display_errors on
+php_value error_reporting E_ALL 

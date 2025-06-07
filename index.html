@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>UniTrack 登入</title>
+</head>
+<body>
+    <h2>UniTrack 登入</h2>
+    <form action="login.php" method="post">
+        <label for="username">帳號：</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">密碼：</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">登入</button>
+    </form>
+    <p>還沒有帳號？<a href="register.html">註冊</a></p>
+    <?php if (isset($_GET['error'])): ?>
+        <p style="color:red;">帳號或密碼錯誤</p>
+    <?php endif; ?>
+</body>
+</html> 

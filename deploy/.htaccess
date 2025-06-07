@@ -1,0 +1,48 @@
+Options -Indexes
+RewriteEngine On
+
+# 強制使用 HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 設定預設字符集
+AddDefaultCharset UTF-8
+
+# 設定 PHP 錯誤報告
+php_flag display_errors off
+php_value error_reporting E_ALL
+
+# 設定 session 參數
+php_value session.cookie_lifetime 86400
+php_value session.gc_maxlifetime 86400
+
+# 設定上傳檔案大小限制
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+
+# 設定時區
+php_value date.timezone "Asia/Taipei"
+
+# 保護敏感檔案
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 保護資料庫設定檔
+<Files "db.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# 保護 composer 相關檔案
+<FilesMatch "composer\.(json|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 保護 SQL 檔案
+<FilesMatch "\.sql$">
+    Order allow,deny
+    Deny from all
+</FilesMatch> 

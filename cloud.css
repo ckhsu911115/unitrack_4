@@ -1,0 +1,45 @@
+/* 文字雲區塊 */
+.cloud-area {
+  width: 100%;
+  min-height: 180px;
+  height: 220px;
+  border: 1.5px solid #e3eaff;
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 12px #e3eaff33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cloud-block h3 {
+  margin-bottom: 12px;
+  color: #3a4a8c;
+}
+.cloud-area canvas {
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer;
+}
+.cloud-area span, .cloud-area text {
+  cursor: pointer;
+  transition: color 0.15s, text-shadow 0.15s;
+}
+.cloud-area span:hover, .cloud-area text:hover {
+  color: #007bff !important;
+  text-shadow: 0 2px 8px #007bff33;
+}
+#cloud-article-list {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #e3eaff33;
+  padding: 18px 22px;
+  min-height: 40px;
+  margin-top: 18px;
+}
+@media (max-width: 700px) {
+  .cloud-flex { flex-direction: column; gap: 18px !important; }
+  .cloud-area { min-height: 120px; height: 140px; }
+} 
