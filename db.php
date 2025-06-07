@@ -1,8 +1,8 @@
 <?php
-$host = 'sql306.infinityfree.com';
-$dbname = 'if0_39174234_unitrack';
-$username = 'if0_39174234';
-$password = 'Aa911115';
+$host = 'mysql.railway.internal';
+$dbname = 'railway';
+$username = 'root';
+$password = 'wfcIVaUVQwJNyQvYzzlqcMoXPagCGJlu';
 $port = 3306;
 
 try {
@@ -14,4 +14,4 @@ try {
 } catch (PDOException $e) {
     die("資料庫連線失敗: " . $e->getMessage());
 }
-?> 
+?>
