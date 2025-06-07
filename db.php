@@ -1,9 +1,9 @@
 <?php
-$host = 'mysql.railway.internal';
+$host = 'centerbeam.proxy.rlwy.net';
+$port = 11549;
 $dbname = 'railway';
 $username = 'root';
 $password = 'wfcIVaUVQwJNyQvYzzlqcMoXPagCGJlu';
-$port = 3306;
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password, [
