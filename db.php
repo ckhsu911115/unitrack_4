@@ -1,9 +1,9 @@
 <?php
-$host = 'centerbeam.proxy.rlwy.net';
-$port = 11549;
-$dbname = 'railway';
-$username = 'root';
-$password = 'wfcIVaUVQwJNyQvYzzlqcMoXPagCGJlu';
+$host = 'unitrack-mysql'; // 注意：這是「Render 內部服務名稱」
+$port = 3306;
+$dbname = 'unitrack_5';
+$username = 'unitrack_user';
+$password = 'unitrack_pass';
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password, [
